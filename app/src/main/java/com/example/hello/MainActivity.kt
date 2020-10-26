@@ -16,5 +16,11 @@ class MainActivity : AppCompatActivity() {
             intent.setClass(this, ConstraintActivity::class.java)
             startActivity(intent)
         }
+        val loginButton = findViewById<Button>(R.id.button2)
+        loginButton.setOnClickListener {
+            val intent = Intent()
+            intent.setClass(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
