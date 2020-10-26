@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">你好</string>
     <string name="edit_message">请输入文字e</string>
+    <string name="button">按钮</string>
     <string name="button_send">发送</string>
     <string name="button_1">约束布局按钮</string>
     <string name="button_2">按钮 2</string>
@@ -14,5 +15,11 @@
     <string name="button_10">按钮 10</string>
     <string name="button_sign_up">注册</string>
     <string name="button_login">登陆</string>
+    <string name="sign_up_with_e_mail">用E-mail注册</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="remember_me">记住用户</string>
+    <string name="forgot_password">忘记密码?</string>
+    <string name="or_connect_with">或用以下方式连接</string>
 
 </resources>
