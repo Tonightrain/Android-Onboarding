@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactPersonActivity"
+    android:layout_margin="16dp">
+
+    <Button
+        android:id="@+id/choose_person"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="@string/choose_contact_person"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/lifecycle"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="@string/lifecycle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/choose_person"
+        android:layout_marginTop="80dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,4 +21,10 @@
     <string name="remember_me">Remember me</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="or_connect_with">or connect with</string>
+    <string name="name_1">Jack</string>
+    <string name="phone_1">13886376888</string>
+    <string name="name_2">Mike</string>
+    <string name="phone_2">13886376999</string>
+    <string name="lifecycle">lifecycle</string>
+    <string name="choose_contact_person">choose contact person</string>
 </resources>
