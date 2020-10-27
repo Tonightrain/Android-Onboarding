@@ -4,10 +4,10 @@
     <string name="button">按钮</string>
     <string name="button_send">发送</string>
     <string name="button_1">约束布局按钮</string>
-    <string name="button_2">按钮 2</string>
-    <string name="button_3">按钮 3</string>
-    <string name="button_4">按钮 4</string>
-    <string name="button_5">按钮 5</string>
+    <string name="button_2">布局实战</string>
+    <string name="button_3">Activity</string>
+    <string name="button_4">fragment片段</string>
+    <string name="button_5">recyclerView</string>
     <string name="button_6">按钮 6</string>
     <string name="button_7">按钮 7</string>
     <string name="button_8">按钮 8</string>

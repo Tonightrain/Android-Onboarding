@@ -3,13 +3,9 @@ package com.example.hello
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.View.inflate
 import android.widget.Button
-import android.widget.LinearLayout
-import androidx.core.content.res.ColorStateListInflaterCompat.inflate
-import com.google.android.material.button.MaterialButton
+import com.example.hello.recyclerView.RecyclerViewActivity
+import com.example.hello.fragment.FragmentActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +29,15 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ActivityPracticesActivity::class.java)
             startActivity(intent)
         }
-
+        val fragmentButton = findViewById<Button>(R.id.button4)
+        fragmentButton.setOnClickListener {
+            val intent = Intent().setClass(this,FragmentActivity::class.java)
+            startActivity(intent)
+        }
+        val recyclerViewButton = findViewById<Button>(R.id.button5)
+        recyclerViewButton.setOnClickListener {
+            val intent = Intent().setClass(this,RecyclerViewActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

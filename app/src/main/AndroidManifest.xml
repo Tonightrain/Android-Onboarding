@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hello">
-        <activity android:name=".LifecycleActivity"></activity>
+        <activity android:name=".recyclerView.RecyclerLIstActivity"></activity>
+        <activity android:name=".recyclerView.RecyclerViewActivity" />
+        <activity android:name=".fragment.FragmentActivity" />
+        <activity android:name=".LifecycleActivity" />
         <activity android:name=".ContactContentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.content" />

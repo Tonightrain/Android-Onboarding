@@ -6,40 +6,41 @@ import android.util.Log
 import kotlin.math.log
 
 class LifecycleActivity : AppCompatActivity() {
+    private val tag = "Lifecycle"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lifecycle)
-        Log.d("Lifecycle", "--------onCreate--------")
+        Log.d(tag, "--------onCreate--------")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("Lifecycle", "--------onStart--------")
+        Log.d(tag, "--------onStart--------")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("Lifecycle", "--------onResume--------")
+        Log.d(tag, "--------onResume--------")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("Lifecycle", "--------onPause--------")
+        Log.d(tag, "--------onPause--------")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d("Lifecycle", "--------onRestart--------")
+        Log.d(tag, "--------onRestart--------")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("Lifecycle", "--------onStop--------")
+        Log.d(tag, "--------onStop--------")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Lifecycle", "--------onDestroy--------")
+        Log.d(tag, "--------onDestroy--------")
     }
 
 
