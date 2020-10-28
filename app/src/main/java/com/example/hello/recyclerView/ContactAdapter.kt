@@ -40,18 +40,18 @@ import viewModel.Contact
 
 class ContactsAdapter(private val mContacts: List<Contact>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    inner class ViewHolderText(listItemView: View) : RecyclerView.ViewHolder(listItemView) {
-        val nameTextView: TextView = itemView.findViewById<TextView>(R.id.contact_name)
-        val phoneTextView: TextView = itemView.findViewById(R.id.contact_phone)
+    inner class ViewHolderContact(listItemView: View) : RecyclerView.ViewHolder(listItemView) {
+//        val nameTextView: TextView = itemView.findViewById<TextView>(R.id.contact_name)
+//        val phoneTextView: TextView = itemView.findViewById(R.id.contact_phone)
     }
 
     inner class ViewHolderHeader(listItemView: View) : RecyclerView.ViewHolder(listItemView) {
-        val headerTextView: TextView = itemView.findViewById<TextView>(R.id.contact_header)
+//        val headerTextView: TextView = itemView.findViewById<TextView>(R.id.contact_header)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == 0){
-            ViewHolderText(LayoutInflater.from(parent.context).inflate(R.layout.item_contact_header, parent, false))
+            ViewHolderContact(LayoutInflater.from(parent.context).inflate(R.layout.item_contact_header, parent, false))
         }else{
             ViewHolderHeader(LayoutInflater.from(parent.context).inflate(R.layout.item_contact, parent, false))
         }
@@ -59,13 +59,13 @@ class ContactsAdapter(private val mContacts: List<Contact>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val contact: Contact = mContacts[position]
-        if (getItemViewType(position) == 1){
-            val textView = (holder as ViewHolderText).nameTextView
-            val textView1 = holder.phoneTextView
+        if (contact.type == Contact.Type.TYPE_ITEM){
+            val textView = holder.itemView.findViewById<TextView>(R.id.contact_name)
+            val textView1 = holder.itemView.findViewById<TextView>(R.id.contact_phone)
             textView.text = contact.name
             textView1.text = contact.phone
         }else{
-            val textView = (holder as ViewHolderHeader).headerTextView
+            val textView = holder.itemView.findViewById<TextView>(R.id.contact_header)
             textView.text = contact.name
         }
     }
