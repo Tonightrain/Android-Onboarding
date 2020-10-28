@@ -15,6 +15,4 @@ class JavaFragment:Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_java,container,false)
     }
-
-
 }

@@ -73,7 +73,6 @@ class ContactsAdapter(private val mContacts: List<Contact>) :
         if (contact.type == Contact.Type.TYPE_ITEM) {
             val textViewName = holder.itemView.findViewById<TextView>(R.id.contact_name)
             val textViewPhone = holder.itemView.findViewById<TextView>(R.id.contact_phone)
-
             val imageView = holder.itemView.findViewById<ImageView>(R.id.contact_picture)
             val url = contact.avatar
             Glide
@@ -102,3 +101,4 @@ class ContactsAdapter(private val mContacts: List<Contact>) :
         return mContacts.size
     }
 }
+

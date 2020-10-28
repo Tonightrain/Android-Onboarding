@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.hello.recyclerView.RecyclerViewActivity
 import com.example.hello.fragment.FragmentActivity
+import com.example.hello.kotlinCoroutines.RxActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         val recyclerViewButton = findViewById<Button>(R.id.button5)
         recyclerViewButton.setOnClickListener {
             val intent = Intent().setClass(this,RecyclerViewActivity::class.java)
+            startActivity(intent)
+        }
+        val rxActivityButton = findViewById<Button>(R.id.button6)
+        rxActivityButton.setOnClickListener {
+            val intent = Intent().setClass(this,RxActivity::class.java)
             startActivity(intent)
         }
     }

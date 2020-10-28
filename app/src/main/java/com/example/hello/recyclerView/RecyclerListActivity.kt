@@ -16,7 +16,7 @@ class RecyclerListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_recycler_list)
 
         val rvContacts = findViewById<View>(R.id.rvContacts) as RecyclerView
-        contacts = Contact.createContactsList(15)
+        contacts = Contact.createContactsList(100)
         val adapter = ContactsAdapter(contacts)
         rvContacts.adapter = adapter
         rvContacts.layoutManager = LinearLayoutManager(this)
