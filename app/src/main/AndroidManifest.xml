@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hello">
-        <activity android:name=".recyclerView.RecyclerLIstActivity"></activity>
+        <activity android:name=".recyclerView.RecyclerListActivity"></activity>
         <activity android:name=".recyclerView.RecyclerViewActivity" />
         <activity android:name=".fragment.FragmentActivity" />
         <activity android:name=".LifecycleActivity" />

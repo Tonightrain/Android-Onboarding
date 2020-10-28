@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hello.R
 import viewModel.Contact
 
-class RecyclerLIstActivity : AppCompatActivity() {
+class RecyclerListActivity : AppCompatActivity() {
     lateinit var contacts:ArrayList<Contact>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycler_l_ist)
+        setContentView(R.layout.activity_recycler_list)
 
         val rvContacts = findViewById<View>(R.id.rvContacts) as RecyclerView
         contacts = Contact.createContactsList(15)

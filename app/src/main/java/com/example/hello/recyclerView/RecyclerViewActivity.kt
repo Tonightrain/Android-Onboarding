@@ -13,7 +13,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         val recyclerListButton = findViewById<Button>(R.id.recycler_view_button)
         recyclerListButton.setOnClickListener {
-            val intent = Intent().setClass(this,RecyclerLIstActivity::class.java)
+            val intent = Intent().setClass(this,RecyclerListActivity::class.java)
             startActivity(intent)
         }
     }
