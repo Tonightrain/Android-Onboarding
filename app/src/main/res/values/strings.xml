@@ -27,4 +27,5 @@
     <string name="phone_2">13886376999</string>
     <string name="lifecycle">生命周期</string>
     <string name="choose_contact_person">选择联系人</string>
+    <string name="sp_save_button">保存</string>
 </resources>

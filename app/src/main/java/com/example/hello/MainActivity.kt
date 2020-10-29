@@ -7,6 +7,7 @@ import android.widget.Button
 import com.example.hello.recyclerView.RecyclerViewActivity
 import com.example.hello.fragment.FragmentActivity
 import com.example.hello.kotlinCoroutines.RxActivity
+import com.example.hello.sharedPreference.SPActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity() {
         val rxActivityButton = findViewById<Button>(R.id.button6)
         rxActivityButton.setOnClickListener {
             val intent = Intent().setClass(this,RxActivity::class.java)
+            startActivity(intent)
+        }
+        val spActivityButton = findViewById<Button>(R.id.button7)
+        spActivityButton.setOnClickListener {
+            val intent = Intent().setClass(this,SPActivity::class.java)
             startActivity(intent)
         }
     }

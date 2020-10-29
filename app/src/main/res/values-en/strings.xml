@@ -27,4 +27,5 @@
     <string name="phone_2">13886376999</string>
     <string name="lifecycle">lifecycle</string>
     <string name="choose_contact_person">choose contact person</string>
+    <string name="sp_save_button">Save</string>
 </resources>
