@@ -1,20 +1,15 @@
 package com.example.hello.kotlinCoroutines
 
 import android.os.Bundle
-import android.os.SystemClock
-import android.transition.TransitionInflater.from
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hello.R
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.internal.util.HalfSerializer.onNext
-import io.reactivex.rxjava3.kotlin.subscribeBy
-import io.reactivex.rxjava3.kotlin.toObservable
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
+import java.util.function.Consumer
+import java.util.function.Predicate
 
 
 class RxActivity : AppCompatActivity() {
@@ -22,7 +17,8 @@ class RxActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rx2)
-//
+
+        //做法1 使用runONUiThread
 //        val buttonTiming = findViewById<Button>(R.id.button_rx)
 //        buttonTiming.setOnClickListener {
 //            var count = 0
@@ -49,10 +45,13 @@ class RxActivity : AppCompatActivity() {
 //        runOnUiThread { text.isEnabled = isButtonEnable }
 //    }
 
+
+        //做法2 使用Dispatchers.Main
 //        val buttonTiming = findViewById<Button>(R.id.button_rx)
 //        buttonTiming.setOnClickListener {
 //            var count = 0
 //            GlobalScope.launch(Dispatchers.Main) {
+//                Log.d("RxActivity", "Thread:${Thread.currentThread().name}")
 //                repeat(11) {
 //                    buttonTiming.isEnabled = count == 10
 //                    buttonTiming.text = "The number is $count"
@@ -63,23 +62,42 @@ class RxActivity : AppCompatActivity() {
 //        }
 
 
+        //做法三 使用Observable 数组流
+//        val buttonTiming = findViewById<Button>(R.id.button_rx)
+//
+//        buttonTiming.setOnClickListener {
+//            val list = listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+//            GlobalScope.launch {
+//                list.toObservable()
+//                    .subscribeBy(
+//                        onNext = {
+//                            runBlocking {
+//                                runOnUiThread { buttonTiming.isEnabled = it == 10 }
+//                                buttonTiming.text = "The number is $it"
+//                                delay(1000L)
+//
+//                            }
+//                        },
+//                        onError = { it.printStackTrace() },
+//                        onComplete = { println("Done") }
+//                    )
+//            }
+//        }
+
+        //做法四 使用Observable.interval 时间流
         val buttonTiming = findViewById<Button>(R.id.button_rx)
         buttonTiming.setOnClickListener {
-            val list = listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-
-            list.toObservable()
-                .subscribeBy(
-                    onNext = {
-                        GlobalScope.launch(Dispatchers.Main) {
-                            buttonTiming.text = "The number is $it"
-                            delay(1000L)
-                        }
-                    },
-                    onError = { it.printStackTrace() },
-                    onComplete = { println("Done") }
-                )
+            Observable.interval(0, 1000L, TimeUnit.MILLISECONDS)
+                .timeInterval()
+                .takeWhile {
+                    it.value() < 11
+                }
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe {
+                    buttonTiming.text = "The number is ${it.value()}"
+                    buttonTiming.isEnabled = it.value() == 10L
+                }
         }
-
 
 //        val buttonTiming = findViewById<Button>(R.id.button_rx)
 //        val letters = arrayOf("1", "2", "3", "4", "5", "6", "7")
@@ -87,24 +105,10 @@ class RxActivity : AppCompatActivity() {
 //        observable.subscribe(
 //            { i: String ->
 //                buttonTiming.text = "The number is $i"
-//                SystemClock.sleep(1000)
 //            },
 //            { obj: Throwable -> obj.printStackTrace() },
 //            {  println("Done")}
 //        )
-
-
-//        val list = listOf("Alpha", "Beta", "Gamma", "Delta", "Epsilon")
-//
-//        list.toObservable() // extension function for Iterables
-//            .filter { it.length >= 5 }
-//            .subscribeBy(  // named arguments for lambda Subscribers
-//                onNext = { println(it) },
-//                onError =  { it.printStackTrace() },
-//                onComplete = { println("Done!") }
-//            )
-
-
     }
 }
 
