@@ -84,7 +84,7 @@ class RxActivity : AppCompatActivity() {
 //            }
 //        }
 
-        //做法四 使用Observable.interval 时间流
+        //做法四 使用Observable.interval 时间流 takeWhile initialDelay it observeOn subscribeOn
         val buttonTiming = findViewById<Button>(R.id.button_rx)
         buttonTiming.setOnClickListener {
             Observable.interval(0, 1000L, TimeUnit.MILLISECONDS)

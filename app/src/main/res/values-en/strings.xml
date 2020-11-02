@@ -10,9 +10,9 @@
     <string name="button_5">recyclerView</string>
     <string name="button_6">Kotlin Coroutines</string>
     <string name="button_7">sharedPreference</string>
-    <string name="button_8">button 8</string>
-    <string name="button_9">button 9</string>
-    <string name="button_10">button 10</string>
+    <string name="button_8">SubmitActivity</string>
+    <string name="button_9">ViewActivity</string>
+    <string name="button_10">NetworkActivity</string>
     <string name="button_sign_up">Signup</string>
     <string name="button_login">Login</string>
     <string name="sign_up_with_e_mail">Sign Up with E-mail</string>
@@ -28,4 +28,9 @@
     <string name="lifecycle">lifecycle</string>
     <string name="choose_contact_person">choose contact person</string>
     <string name="sp_save_button">Save</string>
+    <string name="name">Name</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+    <string name="submit">Submit</string>
+    <string name="retrofit">retrofit</string>
 </resources>

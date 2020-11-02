@@ -3,10 +3,14 @@ package com.example.hello
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import com.example.hello.recyclerView.RecyclerViewActivity
 import com.example.hello.fragment.FragmentActivity
 import com.example.hello.kotlinCoroutines.RxActivity
+import com.example.hello.network.NetworkActivity
+import com.example.hello.room.SubmitActivity
+import com.example.hello.room.ViewActivity
 import com.example.hello.sharedPreference.SPActivity
 
 class MainActivity : AppCompatActivity() {
@@ -49,6 +53,21 @@ class MainActivity : AppCompatActivity() {
         val spActivityButton = findViewById<Button>(R.id.button7)
         spActivityButton.setOnClickListener {
             val intent = Intent().setClass(this,SPActivity::class.java)
+            startActivity(intent)
+        }
+        val submitActivityButton = findViewById<Button>(R.id.button8)
+        submitActivityButton.setOnClickListener {
+           val intent = Intent().setClass(this,SubmitActivity::class.java)
+            startActivity(intent)
+        }
+        val viewActivityButton = findViewById<Button>(R.id.button9)
+        viewActivityButton.setOnClickListener {
+            val intent = Intent().setClass(this,ViewActivity::class.java)
+            startActivity(intent)
+        }
+        val networkActivityButton = findViewById<Button>(R.id.button10)
+        networkActivityButton.setOnClickListener {
+            val intent = Intent().setClass(this,NetworkActivity::class.java)
             startActivity(intent)
         }
     }

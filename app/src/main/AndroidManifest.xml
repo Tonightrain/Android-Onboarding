@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hello">
-        <activity android:name=".sharedPreference.SPActivity"></activity>
+        <activity android:name=".network.NetworkActivity"></activity>
+        <activity android:name=".room.ViewActivity" />
+        <activity android:name=".room.SubmitActivity" />
+        <activity android:name=".sharedPreference.SPActivity" />
         <activity android:name=".kotlinCoroutines.RxActivity" />
         <activity android:name=".recyclerView.RecyclerListActivity" />
         <activity android:name=".recyclerView.RecyclerViewActivity" />
