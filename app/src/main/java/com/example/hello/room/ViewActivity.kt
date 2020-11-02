@@ -7,6 +7,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.hello.R
 import database.AppDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import kotlin.concurrent.thread
 
 class ViewActivity : AppCompatActivity() {
@@ -18,10 +21,10 @@ class ViewActivity : AppCompatActivity() {
         val mContainer: LinearLayout = findViewById<LinearLayout>(R.id.container)
         val personDao = AppDatabase.getDatabase(this).personDao()
 
-        thread {
+        GlobalScope.launch {
             for (person in personDao.getPersons()) {
                 mContainer.addView(addTextView(person.name))
-                mContainer.addView(addTextView(person.gender.toString()))
+                mContainer.addView(addTextView(genderConvert(person.gender)))
                 mContainer.addView(addTextView(person.age.toString()))
             }
         }
@@ -31,5 +34,13 @@ class ViewActivity : AppCompatActivity() {
         val textView = TextView(this)
         textView.text = content
         return textView
+    }
+
+    private fun genderConvert(gender:Int):String{
+        return if (gender == 0){
+            "female"
+        }else{
+            "male"
+        }
     }
 }

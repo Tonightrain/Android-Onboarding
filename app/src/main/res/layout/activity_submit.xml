@@ -8,55 +8,39 @@
     android:orientation="vertical"
     tools:context=".room.SubmitActivity">
 
-
-    <LinearLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_text_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_username"
-        android:orientation="horizontal">
+        android:layout_marginTop="10dp"
+        app:errorEnabled="true">
 
-        <TextView
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/name"
-            android:textSize="16sp" />
-
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_name"
+            android:hint="@string/name"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:background="@null"
-            android:maxLength="8"/>
-    </LinearLayout>
+            android:maxLength="8" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-
-    <LinearLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/gender_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bg_username"
-        android:orientation="horizontal">
+        app:errorEnabled="true">
 
-        <TextView
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/gender"
-            android:textSize="16sp" />
-
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_gender"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:hint="@string/gender"
+            android:layout_height="wrap_content"
             android:inputType="number"
             android:background="@null"/>
-    </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/age_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,21 +48,14 @@
         android:background="@drawable/bg_username"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/age"
-            android:textSize="16sp" />
-
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_age"
+            android:hint="@string/age"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:inputType="number"
             android:background="@null"/>
-    </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button_submit"

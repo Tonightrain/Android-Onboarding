@@ -26,10 +26,9 @@ class NetworkActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<App>, response: Response<App>) {
                     val appData = response.body()
                     if (appData != null) {
-                        Log.d("TAG", appData.data.toString())
+                        Toast.makeText(this@NetworkActivity, appData.data[0].name, Toast.LENGTH_SHORT)
+                            .show()
                     }
-                    Toast.makeText(this@NetworkActivity, "Succeeded", Toast.LENGTH_SHORT)
-                        .show()
                 }
 
                 override fun onFailure(call: Call<App>, t: Throwable) {
