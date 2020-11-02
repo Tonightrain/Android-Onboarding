@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import com.example.hello.architecture.ArchActivity
 import com.example.hello.recyclerView.RecyclerViewActivity
 import com.example.hello.fragment.FragmentActivity
 import com.example.hello.kotlinCoroutines.RxActivity
@@ -68,6 +69,11 @@ class MainActivity : AppCompatActivity() {
         val networkActivityButton = findViewById<Button>(R.id.button10)
         networkActivityButton.setOnClickListener {
             val intent = Intent().setClass(this,NetworkActivity::class.java)
+            startActivity(intent)
+        }
+        val archActivityButton = findViewById<Button>(R.id.button11)
+        archActivityButton.setOnClickListener {
+            val intent = Intent().setClass(this,ArchActivity::class.java)
             startActivity(intent)
         }
     }

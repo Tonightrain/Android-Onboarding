@@ -33,4 +33,5 @@
     <string name="age">Age</string>
     <string name="submit">Submit</string>
     <string name="retrofit">retrofit</string>
+    <string name="archactivity">ArchActivity</string>
 </resources>

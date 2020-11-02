@@ -32,52 +32,28 @@ class SubmitActivity : AppCompatActivity() {
         ageEdit = findViewById(R.id.edit_age)
 
         val personDao = AppDatabase.getDatabase(this).personDao()
-//        submitButton.setOnClickListener {
-//            if (genderEdit.text.toString().toInt() != 0 && genderEdit.text.toString()
-//                    .toInt() != 1
-//            ) {
-//                Toast.makeText(this, ErrorMessage.GENDER_INVALID, Toast.LENGTH_SHORT).show()
-//            }
-//            if (ageEdit.text.toString().toInt() <= 0) {
-//                Toast.makeText(this, ErrorMessage.AGE_INVALID, Toast.LENGTH_SHORT).show()
-//            } else {
-//                GlobalScope.launch {
-//                    Log.d("Thread Submit", "${Thread.currentThread().name} ")
-//                    val person = Person(
-//                        nameEdit.text.toString(),
-//                        genderEdit.text.toString().toInt(),
-//                        ageEdit.text.toString().toInt()
-//                    )
-//                    personDao.createPerson(person)
-//                }
-//                Toast.makeText(this, successMessage, Toast.LENGTH_SHORT).show()
-//            }
-//        }
-
         submitButton.setOnClickListener {
             if (genderEdit.text.toString().toInt() != 0 && genderEdit.text.toString()
                     .toInt() != 1
             ) {
                 genderEdit.error = ErrorMessage.GENDER_INVALID
-//                Toast.makeText(this, ErrorMessage.GENDER_INVALID, Toast.LENGTH_SHORT).show()
             }
             if (ageEdit.text.toString().toInt() <= 0) {
                 ageEdit.error = ErrorMessage.AGE_INVALID
-//                Toast.makeText(this, ErrorMessage.AGE_INVALID, Toast.LENGTH_SHORT).show()
             } else {
                 GlobalScope.launch {
-                    Log.d("Thread Submit", "${Thread.currentThread().name} ")
                     val person = Person(
                         nameEdit.text.toString(),
                         genderEdit.text.toString().toInt(),
                         ageEdit.text.toString().toInt()
                     )
                     personDao.createPerson(person)
+                    Looper.prepare()
+                    Toast.makeText(this@SubmitActivity, successMessage, Toast.LENGTH_SHORT).show()
+                    Looper.loop()
                 }
-                Toast.makeText(this, successMessage, Toast.LENGTH_SHORT).show()
+
             }
         }
-
-
     }
 }

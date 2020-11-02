@@ -23,9 +23,12 @@ class ViewActivity : AppCompatActivity() {
 
         GlobalScope.launch {
             for (person in personDao.getPersons()) {
-                mContainer.addView(addTextView(person.name))
-                mContainer.addView(addTextView(genderConvert(person.gender)))
-                mContainer.addView(addTextView(person.age.toString()))
+                runOnUiThread {
+                    mContainer.addView(addTextView(person.name))
+                    mContainer.addView(addTextView(genderConvert(person.gender)))
+                    mContainer.addView(addTextView(person.age.toString()))
+                }
+
             }
         }
     }

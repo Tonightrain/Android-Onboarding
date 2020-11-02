@@ -33,4 +33,5 @@
     <string name="age">年龄</string>
     <string name="submit">提交</string>
     <string name="retrofit">retrofit</string>
+    <string name="archactivity">ArchActivity</string>
 </resources>
